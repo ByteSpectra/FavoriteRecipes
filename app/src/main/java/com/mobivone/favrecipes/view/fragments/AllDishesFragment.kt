@@ -151,7 +151,21 @@ class AllDishesFragment : Fragment() {
                 }
             }
         } else {
+                    mFavDishViewModel.getFilteredList(filterItem).observe(viewLifecycleOwner){
+                        dishes ->
+                        dishes.let {
+                            if (dishes.isNotEmpty()){
+                                _binding!!.rvDishesList.visibility = View.VISIBLE
+                                _binding!!.tvNoDishesAddedYet.visibility = View.GONE
 
+                                mFavDishAdapter.dishesList(it)
+                            } else {
+                                _binding!!.rvDishesList.visibility = View.GONE
+                                _binding!!.tvNoDishesAddedYet.visibility = View.VISIBLE
+                            }
+                        }
+
+                    }
         }
     }
 
