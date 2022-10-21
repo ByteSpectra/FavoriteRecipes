@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Fav Recipes</string>
+    <string name="title_all_dishes">All Dishes</string>
+    <string name="title_favorite_dishes">Favorite</string>
+    <string name="title_random_dishes">Random Dishes</string>
+    <string name="fav_recipes">Fav Recipes</string>
+    <string name="add_dish">Add Dish</string>
+    <string name="lbl_title">Title</string>
+    <string name="lbl_type">Type</string>
+    <string name="lbl_category">Category</string>
+    <string name="lbl_ingredients">Ingredients</string>
+    <string name="lbl_cookingTime">Cooking Time in Minutes</string>
+    <string name="lbl_addDish">Add Dish</string>
+    <string name="title_select_image">Select Image Action</string>
+    <string name="lbl_camera">Camera</string>
+    <string name="Gallery">Gallery</string>
+
+    <string name="title_select_dish_cookingTime">SELECT COOKING TIME IN MINUTES</string>
+    <string name="title_select_dish_category">SELECT DISH CATEGORY</string>
+    <string name="title_select_dish_type">SELECT DISH TYPE</string>
+
+    <string name="err_msg_select_image">Select dish image.</string>
+    <string name="err_msg_select_title">Enter dish title.</string>
+    <string name="err_msg_select_type">Select dish type.</string>
+    <string name="err_msg_select_category">Select dish category.</string>
+    <string name="err_msg_select_ingredients">Enter dish ingredient.</string>
+    <string name="err_msg_select_cookingTime">Select dish cooking time.</string>
+    <string name="err_msg_select_directions">Enter dish cooking directions.</string>
+
+    <string name="lbl_no_dishes_added_yet">No dishes added yet!</string>
+    <string name="image_content_description">Dish Image</string>
+
+    <string name="lbl_estimate_cooking_time">The approx time required to cook the dish is %1$s mint.</string>
+    <string name="lbl_direction_to_cook">Direction To Cook</string>
+    <string name="adpater_menu_edit_dish">Edit Dish</string>
+    <string name="adpater_menu_delete_dish">Delete Dish</string>
+    <string name="lbl_update_dish">Update Dish</string>
+
+    <string name="delete_dialog_msg">Are you sure you wants to delete %1$s.</string>
+    <string name="lbl_yes">Yes</string>
+    <string name="lbl_no">No</string>
+    
+    <string name="action_filter_dishes">Filter Dishes</string>
+    <string name="title_select_item_to_filter">SELECT ITEM TO FILTER</string>
+
+
+</resources>
