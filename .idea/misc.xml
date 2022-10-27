@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/My Courses/FavoriteRecipes/app/src/main/res/layout/fragment_dish_details.xml" value="0.25416666666666665" />
+        <entry key="..\:/My Courses/FavoriteRecipes/app/src/main/res/layout/fragment_random_dishes.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Mobivone/AndroidStudioProjects/FavRecipes/app/src/main/res/drawable/favorite_button_background.xml" value="0.2075" />
         <entry key="..\:/Users/Mobivone/AndroidStudioProjects/FavRecipes/app/src/main/res/drawable/ic_add_a_photo.xml" value="0.17" />
         <entry key="..\:/Users/Mobivone/AndroidStudioProjects/FavRecipes/app/src/main/res/drawable/ic_camera_alt_24.xml" value="0.17" />
