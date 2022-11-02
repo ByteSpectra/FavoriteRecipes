@@ -1,5 +1,6 @@
 package com.mobivone.favrecipes.view.fragments
 
+import android.app.Dialog
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
@@ -30,6 +31,8 @@ class RandomDishesFragment : Fragment() {
 
     private lateinit var mRandomDishViewModel: RandomDishViewModel
 
+    private var mProgressDialog: Dialog? = null
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -42,6 +45,22 @@ class RandomDishesFragment : Fragment() {
 
         _binding = FragmentRandomDishesBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    private fun showCustomDialog() {
+        mProgressDialog = Dialog(requireActivity())
+
+        mProgressDialog?.let {
+            it.setContentView(R.layout.dialog_custom_progress)
+            it.show()
+        }
+    }
+
+    private fun hideProgressDialog()
+    {
+        mProgressDialog?.let {
+            it.dismiss()
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -78,7 +97,9 @@ class RandomDishesFragment : Fragment() {
 
         mRandomDishViewModel.loadRandomDish.observe(viewLifecycleOwner, { loadRandomDish ->
             loadRandomDish?.let {
-
+                if (loadRandomDish && !_binding!!.srlDishMain.isRefreshing)
+                    showCustomDialog()
+                else hideProgressDialog()
             }
         })
 
