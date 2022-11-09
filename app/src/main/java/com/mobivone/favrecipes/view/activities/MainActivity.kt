@@ -10,8 +10,12 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.work.*
 import com.mobivone.favrecipes.R
 import com.mobivone.favrecipes.databinding.ActivityMainBinding
+import com.mobivone.favrecipes.model.notification.NotificationWorker
+import com.mobivone.favrecipes.utils.Constants
+import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +37,13 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(mNavController, appBarConfiguration)
         mBinding.navView.setupWithNavController(mNavController)
+
+        if (intent.hasExtra(Constants.NOTIFICATION_ID)) {
+            val notificationId = intent.getIntExtra(Constants.NOTIFICATION_ID, 0)
+            mBinding.navView.selectedItemId = R.id.navigation_random_dishes
+        }
+
+        startWork()
     }
 
     override fun onNavigateUp(): Boolean {
@@ -50,5 +61,24 @@ class MainActivity : AppCompatActivity() {
         mBinding.navView.clearAnimation()
         mBinding.navView.animate().translationY(0f).duration = 300
         mBinding.navView.visibility = View.VISIBLE
+    }
+
+    private fun createConstraints() = Constraints.Builder()
+        .setRequiredNetworkType(NetworkType.NOT_REQUIRED)
+        .setRequiresCharging(false)
+        .setRequiresBatteryNotLow(true)
+        .build()
+
+    private fun createWorkRequest() = PeriodicWorkRequestBuilder<NotificationWorker>(5, TimeUnit.HOURS)
+        .setConstraints(createConstraints())
+        .build()
+
+    private fun startWork() {
+        WorkManager.getInstance(this)
+            .enqueueUniquePeriodicWork(
+                "MyFavDishPeriodicWork",
+                ExistingPeriodicWorkPolicy.KEEP,
+                createWorkRequest()
+            )
     }
 }

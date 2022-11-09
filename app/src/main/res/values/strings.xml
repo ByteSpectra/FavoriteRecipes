@@ -47,4 +47,7 @@
     <string name="please_wait">please wait</string>
     <string name="share_dish">Share Dish</string>
 
+    <string name="notification_title">Check out new recipes</string>
+    <string name="notification_subTitle">Tap for more details</string>
+
 </resources>
