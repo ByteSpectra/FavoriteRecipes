@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         startWork()
     }
 
-    override fun onNavigateUp(): Boolean {
+    override fun onSupportNavigateUp(): Boolean {
         // this is the function due to which we can come back from details fragment to the originated fragment
         return NavigationUI.navigateUp(mNavController, null)
     }
